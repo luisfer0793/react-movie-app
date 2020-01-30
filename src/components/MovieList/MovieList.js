@@ -9,7 +9,14 @@ const MovieList = props => {
         <div className="movie-list">
             {props.movies.map(movie => {
                 return (
-                    <Movie id={movie.id} title={movie.title} image={movie.image_large} key={movie.id}/>
+                    <Movie
+                        key={movie.id}
+                        title={movie.title}
+                        image={movie.image_large}
+                        description={movie.description}
+                        year={movie.year}
+                        rating={movie.rating_code}
+                    />
                 );
             })}
         </div>
