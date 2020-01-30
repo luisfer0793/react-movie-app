@@ -1,0 +1,16 @@
+.movie-card {
+	background-size: cover;
+	background-position: center center;
+	height: 250px;
+	opacity: .5;
+	box-shadow: 0 0 5px #202020;
+	transition: opacity 250ms linear;
+}
+
+.movie-card:hover {
+	opacity: 1;
+}
+
+.movie-image {
+	width: 100%;
+}

@@ -1,0 +1,10 @@
+.filter-continer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movies-container {
+    width: 80%;
+    margin: 5rem auto;
+}
