@@ -9,7 +9,7 @@ const MenuItemList = props => {
         <ul className="menu-item-list">
             {props.categories.map(category => {
                 return (
-                    <MenuItem category={category} key={category.id}/>
+                    <MenuItem category={category} changeCategoryHandler={props.changeCategoryHandler} key={category.id}/>
                 );
             })}
         </ul>
