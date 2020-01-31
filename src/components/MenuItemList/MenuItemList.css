@@ -1,0 +1,7 @@
+.menu-item-list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: .1rem solid #6A6A6A;
+}

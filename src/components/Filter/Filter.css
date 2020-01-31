@@ -1,5 +1,6 @@
 .filter {
-    padding: 1.5rem 2.5rem;
+    padding: 1rem 2rem;
     font-family: inherit;
     text-align: center;
+    border-radius: .5rem;
 }
