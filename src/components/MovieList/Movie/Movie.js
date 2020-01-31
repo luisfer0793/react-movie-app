@@ -7,7 +7,7 @@ const Movie = (props) => {
         backgroundImage: `url(${props.image})`,
     };
     
-    const show = () => {
+    const detailProps = () => {
         console.log(props);
     }
     
@@ -21,6 +21,7 @@ const Movie = (props) => {
                         <small className="movie-badge">Clasificación {props.rating}</small>
                     </div>
                     <p className="movie-description">{props.description}</p>
+                    <button className="movie-button" onClick={detailProps}>Ver</button>
                 </div>
             </div>
         </div>

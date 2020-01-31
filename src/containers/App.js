@@ -13,6 +13,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isShowingDetails: false,
             isFetching: false,
             searchText: '',
             movies: [],
@@ -31,9 +32,7 @@ class App extends Component {
     
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevState.url !== this.state.url) {
-            // this.setState({isFetching: true});
             this.fetchData();
-            // this.setState({isFetching: false});
         }
     }
     
@@ -66,21 +65,25 @@ class App extends Component {
             <div className="app">
                 <header className="app-header">
                     <img className="app-logo" src={logo} alt="app logo"/>
-                    <Filter searchTextHandler={this.searchTextHandler} placeholder="Buscar"/>
+                    <Filter
+                        searchTextHandler={this.searchTextHandler}
+                        placeholder="Buscar"
+                    />
                 </header>
                 <nav className="app-navbar">
-                    <MenuItemList categories={this.state.categories} changeCategoryHandler={this.changeCategoryHandler}/>
+                    <MenuItemList
+                        changeCategoryHandler={this.changeCategoryHandler}
+                        categories={this.state.categories}
+                    />
                 </nav>
                 <div className="app-movies-container">
-                    {
-                        this.state.isFetching
-                            ?
-                                <div className="spinner-container">
-                                    <Spinner/>
-                                </div>
-                            :
-                                <MovieList movies={filteredMovies}/>
-                    }
+                    {this.state.isFetching
+                        ?
+                            <div className="spinner-container">
+                                <Spinner/>
+                            </div>
+                        :
+                            <MovieList movies={filteredMovies}/>}
                 </div>
             </div>
         );

@@ -1,7 +1,6 @@
 .movie-card {
 	position: relative;
 	height: 30rem;
-	cursor: pointer;
 	border-radius: .5rem;
 	background-size: cover;
 	background-position: center center;
@@ -32,6 +31,20 @@
 .movie-description {
 	font-size: 1.4rem;
 	padding-top: 3.5rem;
+}
+
+.movie-button {
+	display: block;
+	width: max-content;
+	margin: 2.5rem auto;
+	padding: 1rem 2rem;
+	font-family: inherit;
+	text-transform: uppercase;
+	cursor: pointer;
+	border: none;
+	border-radius: .5rem;
+	color: white;
+	background-color: #D52B1E;
 }
 
 .movie-description-container {
