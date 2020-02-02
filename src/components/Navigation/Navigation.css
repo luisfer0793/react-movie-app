@@ -1,0 +1,30 @@
+.navbar {
+    width: 80%;
+    margin: 0 auto 3rem;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: .1rem solid #202020;
+}
+
+.navbar-item {
+    padding-bottom: 1.5rem;
+}
+
+.navbar-link {
+    position: relative;
+    padding-bottom: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #929292;
+    transition: color 250ms linear;
+}
+
+.navbar-link:hover {
+    color: #ffb875;
+}

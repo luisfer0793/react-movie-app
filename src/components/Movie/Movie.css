@@ -39,9 +39,10 @@
 	margin: 2.5rem auto;
 	padding: 1rem 2rem;
 	font-family: inherit;
+	font-size: 1.4rem;
 	text-transform: uppercase;
+	text-decoration: none;
 	cursor: pointer;
-	border: none;
 	border-radius: .5rem;
 	color: white;
 	background-color: #D52B1E;

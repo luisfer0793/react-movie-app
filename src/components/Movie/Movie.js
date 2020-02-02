@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Movie.css';
 
@@ -6,10 +7,6 @@ const Movie = (props) => {
     const styles = {
         backgroundImage: `url(${props.image})`,
     };
-    
-    const detailProps = () => {
-        console.log(props);
-    }
     
     return (
         <div className="movie-card" style={styles}>
@@ -21,7 +18,7 @@ const Movie = (props) => {
                         <small className="movie-badge">Clasificación {props.rating}</small>
                     </div>
                     <p className="movie-description">{props.description}</p>
-                    <button className="movie-button" onClick={detailProps}>Ver</button>
+                    <Link className="movie-button" to="/infantiles/id">Ver</Link>
                 </div>
             </div>
         </div>
