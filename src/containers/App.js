@@ -15,7 +15,6 @@ import './App.css';
 const App = props => {
     const movies = useSelector(state => state.movies);
     const currentGenre = useSelector(state => state.currentGenre);
-    const currentMovieId = useSelector(state => state.currentMovieId);
     const searchText = useSelector(state => state.searchText);
 
     const dispatch = useDispatch();

@@ -29,7 +29,7 @@ const Movie = (props) => {
                     </div>
                     <p className="movie-description">{props.description}</p>
                     <Link 
-                        to="/:genre/:id" 
+                        to={() => {return `/genre/${props.id}`}} 
                         className="movie-button" 
                         onClick={updateMovieId}>
                         Ver
