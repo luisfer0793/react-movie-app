@@ -1,25 +1,32 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useRef, useEffect } from 'react';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
 import './Filter.css';
 
 const Filter = props => {
-    const {searchText, placeholder, searchTextHandler} = props;
+    let inputRef = useRef();
+
+    const dispatch = useDispatch();
+    const searchText = useSelector(state => state.searchText);
+
+    const action = text => {
+        return ({
+            type: 'UPDATE_SEARCH_TEXT',
+            payload: {
+                text
+            }
+        });
+    }
+
     return (
         <input
-            // onChange={props.searchTextHandler}
-            onChange={() => console.log(props)}
+            ref={inputRef}
+            onChange={() => dispatch(action(inputRef.current.value))}
             className="filter"
             type="text"
-            placeholder={props.placeholder}
+            placeholder='Buscar Películas'
         />
     );
 }
 
-const mapStateToProps = state => {
-    return {
-        searchText: state.searchText
-    };
-}
-
-export default connect(mapStateToProps)(Filter);
+export default Filter;

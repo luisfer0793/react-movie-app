@@ -1,0 +1,27 @@
+.movie-detail {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.movie-detail-title {
+    padding-bottom: 5rem;
+    font-size: 3.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+}
+
+.movie-detail-image {
+    display: block;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.movie-detail-small {
+    padding-right: 2rem;
+}
+
+.movie-detail-text {
+    padding-top: 2rem;
+    font-size: 1.5rem;
+}

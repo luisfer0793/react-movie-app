@@ -2,11 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './Movie.css';
+import { useDispatch } from 'react-redux';
 
 const Movie = (props) => {
+    const dispatch = useDispatch();
+
     const styles = {
         backgroundImage: `url(${props.image})`,
     };
+
+    const updateMovieId = () => {
+        dispatch({
+            type: 'UPDATE_CURRENT_MOVIE',
+            payload: props.movie
+        });
+    }
     
     return (
         <div className="movie-card" style={styles}>
@@ -18,7 +28,12 @@ const Movie = (props) => {
                         <small className="movie-badge">Clasificación {props.rating}</small>
                     </div>
                     <p className="movie-description">{props.description}</p>
-                    <Link className="movie-button" to="/infantiles/id">Ver</Link>
+                    <Link 
+                        to="/:genre/:id" 
+                        className="movie-button" 
+                        onClick={updateMovieId}>
+                        Ver
+                    </Link>
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
-const updateMovieId = (id) => {
+const updateCurrentMovie = movie => {
     return {
         type: 'UPDATE_MOVIE_ID',
-        payload: {currentMovieId: id}
+        payload: movie
     };
 }
 
-export default updateMovieId;
+export default updateCurrentMovie;
