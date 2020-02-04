@@ -1,16 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Filter.css';
 
-const Filter = ({searchTextHandler, placeholder}) => {
+const Filter = props => {
+    const {searchText, placeholder, searchTextHandler} = props;
     return (
         <input
-            onChange={searchTextHandler}
+            // onChange={props.searchTextHandler}
+            onChange={() => console.log(props)}
             className="filter"
             type="text"
-            placeholder={placeholder}
+            placeholder={props.placeholder}
         />
     );
 }
 
-export default Filter;
+const mapStateToProps = state => {
+    return {
+        searchText: state.searchText
+    };
+}
+
+export default connect(mapStateToProps)(Filter);
