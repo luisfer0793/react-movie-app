@@ -7,7 +7,9 @@ const Filter = props => {
     let inputRef = useRef();
 
     const dispatch = useDispatch();
+
     const searchText = useSelector(state => state.searchText);
+    const currentMovie = 0;
 
     const action = text => {
         return ({

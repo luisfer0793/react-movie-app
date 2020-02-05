@@ -1,8 +1,5 @@
-const filterMovies = movies => {
-    return {
-        type: 'FILTER_MOVIE_LIST',
-        payload: movies
-    };
-}
+const type = 'FILTER_MOVIE_LIST';
+
+const filterMovies = movies => ({type, payload: movies});
 
 export default filterMovies;

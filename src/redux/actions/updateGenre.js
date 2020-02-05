@@ -1,8 +1,5 @@
-const updateGenre = genreId => {
-    return {
-        type: 'UPDATE_GENRE',
-        payload: genreId
-    };
-}
+const type = 'UPDATE_GENRE';
+
+const updateGenre = genreId => ({type, payload: genreId});
 
 export default updateGenre;

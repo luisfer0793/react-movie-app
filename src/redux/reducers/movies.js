@@ -1,9 +1,9 @@
 const movies = (state = [], action) => {
     switch(action.type) {
         case 'FETCH_MOVIES':
-            return state = action.payload;
+            return [...action.payload];
         case 'FILTER_MOVIE_LIST':
-            return state = action.payload;
+            return [...action.payload];
         default:
             return state;
     }

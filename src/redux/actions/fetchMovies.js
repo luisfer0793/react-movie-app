@@ -1,8 +1,5 @@
-const fetchMovies = movies => {
-    return {
-        type: 'FETCH_MOVIES',
-        payload: movies
-    };
-}
+const type = 'FETCH_MOVIES';
+
+const fetchMovies = movies => ({type, payload: movies});
 
 export default fetchMovies;

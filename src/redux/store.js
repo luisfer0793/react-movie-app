@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from 'redux';
 
-import movies from '../reducers/movies';
-import searchText from '../reducers/searchText';
-import currentGenre from '../reducers/currentGenre';
-import currentMovie from '../reducers/currentMovie';
+import movies from './reducers/movies';
+import searchText from './reducers/searchText';
+import currentGenre from './reducers/currentGenre';
+import currentMovie from './reducers/currentMovie';
 
 const reducers = combineReducers({
     movies,
