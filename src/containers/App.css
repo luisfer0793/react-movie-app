@@ -12,6 +12,11 @@
     justify-content: space-between;
 }
 
+.app-title {
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .app-movies-container {
     width: 80%;
     margin: 5rem auto;

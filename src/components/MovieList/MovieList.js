@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import Movie from '../Movie/Movie';
 
@@ -11,7 +10,4 @@ const MovieList = props => (
     </div>
 );
 
-const mapStateToProps = state => ({movies: state.movies});
-const mapDispatchToProps = dispatch => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
+export default MovieList;

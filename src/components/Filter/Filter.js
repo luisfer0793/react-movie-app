@@ -1,29 +1,20 @@
-import React, { useRef, useEffect } from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import React, { useRef } from 'react';
+import { connect } from 'react-redux';
+
+import store from '../../redux/store';
+import updateSearchText from '../../redux/actions/updateSearchText';
 
 import './Filter.css';
 
 const Filter = props => {
     let inputRef = useRef();
-
-    const dispatch = useDispatch();
-
-    const searchText = useSelector(state => state.searchText);
-    const currentMovie = 0;
-
-    const action = text => {
-        return ({
-            type: 'UPDATE_SEARCH_TEXT',
-            payload: {
-                text
-            }
-        });
-    }
+    
+    const updateText = () => store.dispatch(updateSearchText(inputRef.current.value));
 
     return (
         <input
             ref={inputRef}
-            onChange={() => dispatch(action(inputRef.current.value))}
+            onChange={updateText}
             className="filter"
             type="text"
             placeholder='Buscar Películas'
@@ -31,4 +22,7 @@ const Filter = props => {
     );
 }
 
-export default Filter;
+const mapStateToProps = state => ({searchText: state.searchText});
+const mapDispatchToProps = dispatch => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);
