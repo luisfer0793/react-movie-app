@@ -1,19 +1,21 @@
 import React, {useEffect, useRef} from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 
-import store from '../../redux/store';
 import updateSearchText from '../../redux/actions/updateSearchText';
 
 import './Filter.css';
 
 const Filter = props => {
+    const dispatch = useDispatch();
+    
     let inputRef = useRef();
     
     useEffect(() => {
         inputRef.current.value = '';
+        dispatch(updateSearchText(''));
     }, [props.currentGenre]);
     
-    const updateText = () => store.dispatch(updateSearchText(inputRef.current.value));
+    const updateText = () => dispatch(updateSearchText(inputRef.current.value));
 
     return (
         <input
@@ -26,7 +28,10 @@ const Filter = props => {
     );
 }
 
-const mapStateToProps = state => ({currentGenre: state.currentGenre});
+const mapStateToProps = state => ({
+    currentGenre: state.currentGenre,
+    searchText: state.searchText
+});
 const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
