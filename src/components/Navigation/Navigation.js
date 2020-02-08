@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import updateGenre from '../../redux/actions/updateGenre';
+import updateGenreAction from '../../redux/actions/update-genre-action';
 
 import './Navigation.css';
 
@@ -13,21 +13,21 @@ const Navigation = props => {
             <ul className="navbar-menu">
                 <li className="navbar-item">
                     <Link to="/accion" 
-                          onClick={() => dispatch(updateGenre(43861))}
+                          onClick={() => dispatch(updateGenreAction(43861))}
                           className="navbar-link">
                         Acción y Aventura
                     </Link>
                 </li>
                 <li className="navbar-item">
                     <Link to="/scifi" 
-                          onClick={() => dispatch(updateGenre(43864))}
+                          onClick={() => dispatch(updateGenreAction(43864))}
                           className="navbar-link">
                         Ciencia Ficción
                     </Link>
                 </li>
                 <li className="navbar-item">
                     <Link to="/infantiles" 
-                          onClick={() => dispatch(updateGenre(43873))}
+                          onClick={() => dispatch(updateGenreAction(43873))}
                           className="navbar-link">
                         Infantiles
                     </Link>
